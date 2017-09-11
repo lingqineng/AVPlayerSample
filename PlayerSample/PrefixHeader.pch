@@ -1,0 +1,43 @@
+//
+//  PrefixHeader.pch
+//  Elight
+//
+//  Created by lingqineng on 16/11/1.
+//  Copyright © 2016年 lingqineng. All rights reserved.
+//
+#import <Foundation/Foundation.h>
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//const
+#define STATUSBAR_HEIGHT 20
+#define NAVIGATIONBAR_HEIGHT 64
+#define TABBAR_HEIGHT 48
+#define SCREEN_FRAME ([[UIScreen mainScreen] bounds])//定义屏幕的Frame
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)//定义屏幕的宽度
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)//定义屏幕的高度
+
+#define kKeyWindow ([[UIApplication sharedApplication] keyWindow])
+
+#define kDefaultColor ([UIColor colorWithRed:0/255.0 green:153.0/255.0 blue:255.0/255.0 alpha:1])//该APP的主题色
+
+#define kBgColor ([UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:243.0/255.0 alpha:1]) //背景颜色
+
+#define COLOR(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A] //定义UIColor的简易方法
+#define kBaseUrl (@"http://120.77.82.184:8080/Wokesen/") //定义url
+#define kPhoneNumber ([AppContextManager sharedManager].userInfo[@"phonenumber"])
+#define kPassword ([AppContextManager sharedManager].password)
+
+#define DEBUG_MODE//自己定义一个Debug宏 当需要时将此定义直接删掉即可改变下边代码的执行
+//debug log
+#ifdef DEBUG_MODE
+#define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DLog( s, ... )
+#endif
+
+#endif /* PrefixHeader_pch */

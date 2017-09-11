@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Musicname</key>
+		<string>月半小夜曲</string>
+		<key>Filename</key>
+		<string>1201111234.mp3</string>
+		<key>Singer</key>
+		<string>李克勤</string>
+		<key>SingerIcon</key>
+		<string>lkq_icon.jpg</string>
+		<key>CoverImage</key>
+		<string>lkq.jpg</string>
+	</dict>
+	<dict>
+		<key>Musicname</key>
+		<string>一千年以后</string>
+		<key>Filename</key>
+		<string>309769.mp3</string>
+		<key>Singer</key>
+		<string>林俊杰</string>
+		<key>SingerIcon</key>
+		<string>lkq_icon.jpg</string>
+		<key>CoverImage</key>
+		<string>jj.jpg</string>
+	</dict>
+	<dict>
+		<key>Musicname</key>
+		<string>简单爱</string>
+		<key>Filename</key>
+		<string>10736444.mp3</string>
+		<key>Singer</key>
+		<string>周杰伦</string>
+		<key>SingerIcon</key>
+		<string>lkq_icon.jpg</string>
+		<key>CoverImage</key>
+		<string>jay.jpg</string>
+	</dict>
+</array>
+</plist>
