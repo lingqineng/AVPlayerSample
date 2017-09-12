@@ -374,6 +374,12 @@
  *  初始化播放器
  */
 -(void)setupPlayer{
+    @try {
+        [[NSNotificationCenter defaultCenter]removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter]removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
+    } @catch (NSException *exception) {
+    }
+    
     [AVPlayerManager manager].playEndDelegate = self;
     self.currentModel                         = [[AVPlayerManager manager].tracksArray objectAtIndex:[AVPlayerManager manager].currentIndex];
     [[AVPlayerManager manager] playAudio];
@@ -381,6 +387,8 @@
     if (!self.progressTimer) {
         [self addProgressTimer];
     }
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleInterruption:) name:AVAudioSessionInterruptionNotification object:[AVAudioSession sharedInstance]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangeListenerCallback:) name:AVAudioSessionRouteChangeNotification object:nil];
 }
 
 # pragma mark - Music delegate
@@ -423,6 +431,14 @@
     cell.imageUrl        = model.SingerIcon;
     return cell;
     
+}
+# pragma mark - tableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [AVPlayerManager manager].currentIndex = indexPath.row;
+    [self setupPlayer];
+    [self clickCloseBtn];
 }
 
 # pragma mark - Music Handle (添加去除监听、KVO，播放响应事件打断)
