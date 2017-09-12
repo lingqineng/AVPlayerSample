@@ -1,4 +1,4 @@
-##AVPlayerSample
+## AVPlayerSample
 A simple audio player with custom UI for iOS, based on AVPlayer. It can help developers more easily integrate a music player.
 
 ## Features
