@@ -26,12 +26,16 @@ git clone https://github.com/lingqineng/AVPlayerSample.git
 
 ## Usage （Support AutoLayout and code）
 
-# Contact me
+## Attention
+if you want to run this demo in Xcode7, you need open Main.storyboard and LaunchScreen.storyboard as sourceCode,Then
+find:`<capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>`,delete it and enjoy!
+
+## Contact me
 - Email: lingqineng@163.com
 - QQ：294044392
 
 If you have any questions, please contact me without hesitation.
 
-# License
+## License
 
 AVPlayerSample is available under the MIT license. See the LICENSE file for more info.
