@@ -443,14 +443,12 @@
 
 # pragma mark - Music Handle (添加去除监听、KVO，播放响应事件打断)
 /// @name  Music Handle (添加去除监听、KVO，播放响应事件打断)
-- (void)addProgressTimer
-{
+- (void)addProgressTimer{
     self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressInfo) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.progressTimer forMode:NSRunLoopCommonModes];
 }
 
-- (void)removeProgressTimer
-{
+- (void)removeProgressTimer{
     [self.progressTimer invalidate];
     self.progressTimer = nil;
 }

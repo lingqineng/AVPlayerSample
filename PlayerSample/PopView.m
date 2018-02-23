@@ -11,8 +11,7 @@
 @implementation PopView
 
 + (void)setPopupInfoViewWithState:(BOOL)isDown SubUIView:(UIView *)view UIViewFrame:(CGRect)frame{
-    if(isDown == NO)
-    {
+    if(isDown == NO){
         [UIView animateWithDuration:0.1
                               delay:0.0
                             options:0
@@ -30,8 +29,7 @@
                                               }];
                          }];
         
-    }else
-    {
+    }else{
         [UIView animateWithDuration:0.1
                               delay:0.0
                             options:0
